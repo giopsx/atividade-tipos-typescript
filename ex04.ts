@@ -59,7 +59,3 @@ const listaNova: { nome: string; preco: number; quantidade: number }[] = [
 // Conferência (sem imprimir, para a saída bater com a esperada):
 // primeiro.nome === 'Arroz 5kg', segundo.nome === 'Feijão 1kg',
 // itens.length === 5 e listaNova.length === 6 -> a original não foi alterada.
-void primeiro;
-void segundo;
-void listaNova;
-void categorias;

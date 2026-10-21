@@ -61,15 +61,13 @@ let r2 = 'sul'; // tipo inferido: string -> NÃO pode
 // Com `let` o valor pode ser reatribuído depois, então ele "alarga" (widening)
 // o tipo para string, que é mais amplo que a união de literais.
 r2 = 'norte'; // prova de que r2 pode mudar
-const r3 = 'sul' as const; // correção: `as const` trava o tipo literal
-void r2;
+let r3 = 'sul' as const; // correção: `as const` trava o tipo literal mesmo com let
 
 // --- Saída ---
 console.log(`Cliente: ${formatarCodigo(codigo)} | Camiseta: ${tamanho}`);
 console.log(`Entrega: ${logradouro} - ${complementoTexto}`);
 console.log(`Frete para o ${r}: R$ ${calcularFrete(r).toFixed(2)}`);
 console.log(`Telefone: ${limparTelefone('(69) 99999-0000')}`);
-// limparTelefone(69999990000) também devolve '69999990000' (não impresso,
-// para a saída bater com a esperada). O mesmo vale para calcularFrete(r3).
-void limparTelefone(69999990000);
-void calcularFrete(r3);
+// Os dois casos abaixo não são impressos para a saída bater com a esperada:
+const telefoneDeNumero: string = limparTelefone(69999990000); // '69999990000'
+const freteComAsConst: number = calcularFrete(r3); // 15, agora o let é aceito

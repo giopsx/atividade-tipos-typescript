@@ -46,7 +46,6 @@ notificarTodos(['(69) 99999-0000'], aviso.repeat(10), porSms);
 
 // --- 6) Reflexão: retorno ignorado em um tipo de função void ---
 const contar: Notificador = (d, m) => m.length; // aceito!
-void contar;
 //
 // Quando o tipo de função declara `=> void`, o TypeScript entende que quem
 // chama a função NÃO vai usar o valor devolvido. Então qualquer retorno é

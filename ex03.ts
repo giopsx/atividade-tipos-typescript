@@ -56,7 +56,7 @@ console.log(resumo(paciente2));
 //    contatoEmergencia?: { nome: string; telefone: string; } | undefined; }'.
 
 // --- 5) Reflexão: object x Object x {} ---
-const dados: object = paciente;
+let dados: object = paciente;
 // console.log(dados.nome);
 // error TS2339: Property 'nome' does not exist on type 'object'.
 //
@@ -64,7 +64,7 @@ const dados: object = paciente;
 // nenhuma informação sobre QUAIS propriedades existem, então o compilador não
 // deixa acessar `.nome`. O tipo declarado (object) é o que vale para a checagem,
 // e não o valor que foi atribuído.
-void dados;
+dados = paciente2; // `let`, pode ser reatribuído
 
 // let x: {} = 10;      // ACEITO: `{}` significa "qualquer coisa que não seja null/undefined",
 //                      // e isso inclui os primitivos (number, string, boolean...).
